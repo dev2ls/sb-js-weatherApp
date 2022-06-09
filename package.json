@@ -1,0 +1,27 @@
+{
+  "name": "weatherapp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack",
+    "ghpages": "git subtree push --prefix dist origin gh-pages"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "html-webpack-plugin": "^5.5.0",
+    "json5": "^2.2.1",
+    "sass": "^1.52.2",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.2"
+  }
+}
