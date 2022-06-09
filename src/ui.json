@@ -1,0 +1,41 @@
+{
+  "desktop": {
+    "container": {
+      "tag": "div",
+      "className": "wrapper",
+      "c": {
+        "currentData": {
+          "tag": "div",
+          "className": "currentData",
+          "c": {
+            "currentTemp": {
+              "tag": "span",
+              "className": "curTemp"
+            },
+            "measurement": {
+              "tag": "span",
+              "className": "measure"
+            },
+            "date": {
+              "tag": "span",
+              "className": "date",
+              "id": "date"
+            },
+            "time": {
+              "tag": "span",
+              "className": "time",
+              "id": "time"
+            }
+          }
+        },
+        "hourlyForecast": {
+          "tag": "div",
+          "className": "hour forecast",
+          "i": {
+            "hourlyCard": "hourlyCard"
+          }
+        }
+      }
+    }
+  }
+}
