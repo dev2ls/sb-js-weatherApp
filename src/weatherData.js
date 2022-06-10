@@ -17,6 +17,10 @@ const weatherData = () => {
 
     data.main = response.main;
 
+    data.wind = response.wind;
+
+    data.sys = response.sys;
+
     data.weather = response.weather;
 
     return data;
