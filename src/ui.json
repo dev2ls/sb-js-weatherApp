@@ -4,17 +4,33 @@
       "tag": "div",
       "className": "wrapper",
       "c": {
-        "currentData": {
+        "currentTemp": {
           "tag": "div",
-          "className": "currentData",
+          "className": "currentTemp",
           "c": {
-            "currentTemp": {
+            "current": {
               "tag": "span",
-              "className": "curTemp"
+              "id": "current"
+            },
+            "feelsLike": {
+              "tag": "span",
+              "id": "feelsLike",
+              "textContent": "feels like: "
+            },
+            "minimal": {
+              "tag": "span",
+              "id": "minimal",
+              "textContent": "minimum: "
+            },
+            "maximal": {
+              "tag": "span",
+              "id": "maximal",
+              "textContent": "maximum: "
             },
             "measurement": {
               "tag": "span",
-              "className": "measure"
+              "className": "measure",
+              "innerHTML": "<sup>0</sup>C"
             },
             "date": {
               "tag": "span",
@@ -28,11 +44,95 @@
             }
           }
         },
+        "currentData": {
+          "tag": "div",
+          "className": "currentData",
+          "c": {
+            "humidity": {
+              "tag": "span",
+              "className": "humidity",
+              "id": "humidity",
+              "textContent": "Humidity: "
+            },
+            "pressure": {
+              "tag": "span",
+              "className": "pressure",
+              "id": "pressure",
+              "textContent": "Pressure: "
+            },
+            "windSpeed": {
+              "tag": "span",
+              "id": "windSpeed",
+              "textContent": "Wind speed: "
+            }
+          }
+        },
         "hourlyForecast": {
           "tag": "div",
           "className": "hour forecast",
           "i": {
             "hourlyCard": "hourlyCard"
+          }
+        },
+        "dailyForecast": {
+          "tag": "div",
+          "className": "day forecast",
+          "i": {
+            "daylyForecast": "daylyForecast"
+          }
+        },
+        "otherData": {
+          "tag": "div",
+          "className": "otherData",
+          "c": {
+            "cityLabel": {
+              "tag": "label",
+              "className": "cityLabel",
+              "c": {
+                "cityInput": {
+                  "tag": "input",
+                  "type": "text",
+                  "className": "cityInput",
+                  "id": "cityInput",
+
+                  "value": "Szczecin"
+                }
+              }
+            },
+            "sun": {
+              "tag": "div",
+              "className": "sun",
+              "c": {
+                "sunrise": {
+                  "tag": "div",
+                  "className": "sunrise",
+                  "c": {
+                    "name": {
+                      "tag": "h4",
+                      "textContent": "Sunrise"
+                    },
+                    "time": {
+                      "tag": "span",
+                      "id": "sunrise"
+                    }
+                  }
+                },
+                "sunset": {
+                  "tag": "div",
+                  "className": "sunset",
+                  "c": {
+                    "name": {
+                      "tag": "h4",
+                      "textContent": "Sunset"
+                    },
+                    "time": {
+                      "tag": "span",
+                      "id": "sunset"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
