@@ -1,72 +1,157 @@
 {
   "desktop": {
-    "container": {
-      "tag": "div",
-      "className": "wrapper",
-      "c": {
-        "currentTemp": {
-          "tag": "div",
-          "className": "currentTemp",
-          "c": {
-            "current": {
-              "tag": "span",
-              "id": "current"
-            },
-            "feelsLike": {
-              "tag": "span",
-              "id": "feelsLike",
-              "textContent": "feels like: "
-            },
-            "minimal": {
-              "tag": "span",
-              "id": "minimal",
-              "textContent": "minimum: "
-            },
-            "maximal": {
-              "tag": "span",
-              "id": "maximal",
-              "textContent": "maximum: "
-            },
-            "measurement": {
-              "tag": "span",
-              "className": "measure",
-              "innerHTML": "<sup>0</sup>C"
-            },
-            "date": {
-              "tag": "span",
-              "className": "date",
-              "id": "date"
-            },
-            "time": {
-              "tag": "span",
-              "className": "time",
-              "id": "time"
+    "tag": "div",
+    "className": "container",
+    "c": {
+      "cityLabel": {
+        "tag": "label",
+        "className": "cityLabel",
+        "c": {
+          "cityInput": {
+            "tag": "input",
+            "type": "text",
+            "className": "cityInput",
+            "id": "cityInput",
+
+            "value": "Szczecin"
+          }
+        }
+      },
+      "current": {
+        "tag": "div",
+        "className": "currentTemp",
+        "c": {
+          "skyWrapper": {
+            "tag": "div",
+            "className": "sky",
+            "c": {
+              "sky": {
+                "tag": "span",
+                "id": "sky"
+              },
+              "skyImg": {
+                "tag": "img",
+                "id": "skyImg"
+              }
+            }
+          },
+          "tempWrapper": {
+            "tag": "div",
+            "className": "tempWrapper",
+            "c": {
+              "temperatures": {
+                "tag": "div",
+                "className": "temperatures",
+                "c": {
+                  "current": {
+                    "tag": "span",
+                    "className": "current",
+                    "id": "current"
+                  },
+                  "feelsLike": {
+                    "tag": "span",
+                    "id": "feelsLike",
+                    "textContent": "feels like: "
+                  },
+                  "minimal": {
+                    "tag": "span",
+                    "id": "minimal",
+                    "textContent": "minimum: "
+                  },
+                  "maximal": {
+                    "tag": "span",
+                    "id": "maximal",
+                    "textContent": "maximum: "
+                  }
+                }
+              },
+              "measure": {
+                "tag": "span",
+                "className": "measure",
+                "innerHTML": "<sup>0</sup>C"
+              }
+            }
+          },
+          "currentDate": {
+            "tag": "div",
+            "className": "time",
+            "c": {
+              "date": {
+                "tag": "span",
+                "className": "date",
+                "id": "date"
+              },
+              "time": {
+                "tag": "span",
+                "className": "time",
+                "id": "time"
+              }
+            }
+          },
+          "otherData": {
+            "tag": "div",
+            "className": "otherData",
+            "c": {
+              "humidity": {
+                "tag": "span",
+                "id": "humidity",
+                "textContent": "Humidity: "
+              },
+              "pressure": {
+                "tag": "span",
+                "id": "pressure",
+                "textContent": "Pressure: "
+              },
+              "windSpeed": {
+                "tag": "span",
+                "id": "windSpeed",
+                "textContent": "Wind speed: "
+              },
+              "deg": {
+                "tag": "span",
+                "id": "deg",
+                "textContent": "Wind direction: "
+              }
+            }
+          },
+          "sun": {
+            "tag": "div",
+            "className": "sun",
+            "c": {
+              "sunrise": {
+                "tag": "div",
+                "className": "sunrise",
+                "c": {
+                  "name": {
+                    "tag": "h4",
+                    "textContent": "Sunrise"
+                  },
+                  "time": {
+                    "tag": "span",
+                    "id": "sunrise"
+                  }
+                }
+              },
+              "sunset": {
+                "tag": "div",
+                "className": "sunset",
+                "c": {
+                  "name": {
+                    "tag": "h4",
+                    "textContent": "Sunset"
+                  },
+                  "time": {
+                    "tag": "span",
+                    "id": "sunset"
+                  }
+                }
+              }
             }
           }
-        },
-        "currentData": {
-          "tag": "div",
-          "className": "currentData",
-          "c": {
-            "humidity": {
-              "tag": "span",
-              "className": "humidity",
-              "id": "humidity",
-              "textContent": "Humidity: "
-            },
-            "pressure": {
-              "tag": "span",
-              "className": "pressure",
-              "id": "pressure",
-              "textContent": "Pressure: "
-            },
-            "windSpeed": {
-              "tag": "span",
-              "id": "windSpeed",
-              "textContent": "Wind speed: "
-            }
-          }
-        },
+        }
+      },
+      "forecasts": {
+        "tag": "div",
         "hourlyForecast": {
           "tag": "div",
           "className": "hour forecast",
@@ -79,60 +164,6 @@
           "className": "day forecast",
           "i": {
             "daylyForecast": "daylyForecast"
-          }
-        },
-        "otherData": {
-          "tag": "div",
-          "className": "otherData",
-          "c": {
-            "cityLabel": {
-              "tag": "label",
-              "className": "cityLabel",
-              "c": {
-                "cityInput": {
-                  "tag": "input",
-                  "type": "text",
-                  "className": "cityInput",
-                  "id": "cityInput",
-
-                  "value": "Szczecin"
-                }
-              }
-            },
-            "sun": {
-              "tag": "div",
-              "className": "sun",
-              "c": {
-                "sunrise": {
-                  "tag": "div",
-                  "className": "sunrise",
-                  "c": {
-                    "name": {
-                      "tag": "h4",
-                      "textContent": "Sunrise"
-                    },
-                    "time": {
-                      "tag": "span",
-                      "id": "sunrise"
-                    }
-                  }
-                },
-                "sunset": {
-                  "tag": "div",
-                  "className": "sunset",
-                  "c": {
-                    "name": {
-                      "tag": "h4",
-                      "textContent": "Sunset"
-                    },
-                    "time": {
-                      "tag": "span",
-                      "id": "sunset"
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
