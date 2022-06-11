@@ -1,0 +1,107 @@
+html {
+  height: 100vh;
+  background-image: linear-gradient(243.18deg, #5cebd1 0%, #1a2b2c 100%);
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.currentTemp {
+  font-size: 18px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  .sky {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 30px;
+
+    img {
+      width: 150px;
+      height: 150px;
+      margin-top: -30px;
+    }
+  }
+
+  .tempWrapper {
+    display: flex;
+    margin: 20px 0;
+
+    .temperatures {
+      margin: 0 30px;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: flex-end;
+
+      span {
+        margin-top: 5px;
+        font-style: italic;
+      }
+
+      .current {
+        font-size: 96px;
+      }
+    }
+
+    .measure {
+      font-size: 150px;
+    }
+  }
+
+  .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    span {
+      margin-top: 10px;
+    }
+  }
+
+  .otherData {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    width: 400px;
+
+    span {
+      width: 200px;
+      margin-top: 15px;
+    }
+  }
+
+  .sun {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .sunrise,
+    .sunset {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin: 40px;
+      padding: 30px;
+
+      font-size: 30px;
+
+      border-radius: 30px;
+    }
+
+    .sunrise {
+      color: yellow;
+      border: 1px solid yellow;
+      background-color: rgba(225, 255, 0, 0.2);
+    }
+
+    .sunset {
+      color: darkblue;
+      border: 2px solid darkblue;
+      background-color: rgba(0, 0, 255, 0.2);
+    }
+  }
+}
