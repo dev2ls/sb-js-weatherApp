@@ -21,7 +21,11 @@ const weatherData = () => {
 
     data.sys = response.sys;
 
-    data.weather = response.weather;
+    const [weather] = response.weather;
+
+    data.weather = weather;
+
+    data.weather.icon = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
 
     return data;
   };
