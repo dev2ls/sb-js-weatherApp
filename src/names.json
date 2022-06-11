@@ -1,0 +1,18 @@
+{
+  "titles": {
+    "skyImg": ["skyImg"],
+    "sky": ["sky"],
+    "current": ["current"],
+    "feelsLike": ["feelsLike"],
+    "minimal": ["minimal"],
+    "maximal": ["maximal"],
+    "humidity": ["humidity"],
+    "pressure": ["pressure"],
+    "windSpeed": ["windSpeed"],
+    "deg": ["deg"],
+    "sunset": ["sunset"],
+    "sunrise": ["sunrise"],
+    "date": ["date"],
+    "time": ["time"]
+  }
+}
