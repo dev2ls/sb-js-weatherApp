@@ -1,0 +1,56 @@
+{
+  "hourlyForecast": {
+    "tag": "div",
+    "c": {
+      "previous": {
+        "tag": "button"
+      },
+      "hourlyCard": {
+        "tag": "div",
+        "className": "hour forecast",
+        "c": {
+          "hour": {
+            "tag": "time"
+          },
+          "icon": {
+            "tag": "img"
+          },
+          "temperature": {
+            "tag": "span"
+          },
+          "pressure": {
+            "tag": "span"
+          },
+          "humidity": {
+            "tag": "span"
+          },
+          "windSpeed": {
+            "tag": "span"
+          },
+          "deg": {
+            "tag": "span"
+          }
+        }
+      },
+      "next": {
+        "tag": "button"
+      }
+    }
+  },
+  "dailyForecast": {
+    "tag": "div",
+    "c": {
+      "previous": {
+        "tag": "button"
+      },
+      "dailyCard": {
+        "tag": "div",
+        "className": "day forecast",
+        "c": {}
+      },
+      "next": {
+        "tag": "button"
+      }
+    }
+  }
+}
