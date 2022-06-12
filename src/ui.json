@@ -1,4 +1,19 @@
 {
+  "loader": {
+    "tag": "label",
+    "className": "cityLabel",
+    "c": {
+      "cityInput": {
+        "tag": "input",
+        "type": "text",
+        "className": "cityInput",
+        "id": "cityInput",
+
+        "value": "Szczecin"
+      }
+    }
+  },
+
   "desktop": {
     "tag": "div",
     "className": "container",
@@ -77,12 +92,12 @@
             "className": "time",
             "c": {
               "date": {
-                "tag": "span",
+                "tag": "time",
                 "className": "date",
                 "id": "date"
               },
               "time": {
-                "tag": "span",
+                "tag": "time",
                 "className": "time",
                 "id": "time"
               }
@@ -127,7 +142,7 @@
                     "textContent": "Sunrise"
                   },
                   "time": {
-                    "tag": "span",
+                    "tag": "time",
                     "id": "sunrise"
                   }
                 }
@@ -141,7 +156,7 @@
                     "textContent": "Sunset"
                   },
                   "time": {
-                    "tag": "span",
+                    "tag": "time",
                     "id": "sunset"
                   }
                 }
@@ -152,18 +167,10 @@
       },
       "forecasts": {
         "tag": "div",
-        "hourlyForecast": {
-          "tag": "div",
-          "className": "hour forecast",
+        "c": {
           "i": {
-            "hourlyCard": "hourlyCard"
-          }
-        },
-        "dailyForecast": {
-          "tag": "div",
-          "className": "day forecast",
-          "i": {
-            "daylyForecast": "daylyForecast"
+            "hourly": "hourlyCard",
+            "daily": "dailyCard"
           }
         }
       }
