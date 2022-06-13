@@ -1,40 +1,40 @@
 const weatherData = async (city) => {
-  const apikey = '8ae3e8d71bc8cb9bbb60a87ec6790462';
+  const apiKey = '8ae3e8d71bc8cb9bbb60a87ec6790462';
 
   const url = 'https://api.openweathermap.org/data/2.5';
 
-  const curreq = await fetch(`${url}/weather?q=${city}&appid=${apikey}`, {
+  const curReq = await fetch(`${url}/weather?q=${city}&appid=${apiKey}`, {
     mode: 'cors',
   });
 
-  const curresp = await curreq.json();
+  const curResp = await curReq.json();
 
-  const { lat, lon } = curresp.coord;
+  const { lat, lon } = curResp.coord;
 
-  const forreq = await fetch(
-    `${url}/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${apikey}`,
+  const forReq = await fetch(
+    `${url}/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${apiKey}`,
     { mode: 'cors' },
   );
 
-  const forresp = await forreq.json();
+  const forResp = await forReq.json();
 
   const data = {};
 
-  data.coord = curresp.coord;
+  data.coord = curResp.coord;
 
-  data.main = curresp.main;
+  data.main = curResp.main;
 
-  data.wind = curresp.wind;
+  data.wind = curResp.wind;
 
-  data.sys = curresp.sys;
+  data.sys = curResp.sys;
 
-  const [weather] = curresp.weather;
+  const [weather] = curResp.weather;
 
   data.weather = weather;
 
-  data.weather.icon = `http://openweathermap.org/img/wn/${curresp.weather[0].icon}@2x.png`;
+  data.weather.icon = `http://openweathermap.org/img/wn/${curResp.weather[0].icon}@2x.png`;
 
-  data.forecast = forresp;
+  data.forecast = forResp;
 
   return data;
 };
