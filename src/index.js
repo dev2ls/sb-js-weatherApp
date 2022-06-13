@@ -1,11 +1,22 @@
+import weatherData from './weatherData';
 import ui from './ui.json';
 import uiCreator from './uiCreator';
-import eventCreator from './eventCreator';
 import './ui.scss';
 
-const events = eventCreator();
-const page = uiCreator();
+import contentCreator from './contentCreator';
 
-const container = events.add(page.nodeCreate(ui.desktop));
+const app = async () => {
+  const data = await weatherData('Szczecin');
 
-page.render(document.body, container);
+  const weather = JSON.parse(JSON.stringify(data));
+
+  const page = uiCreator();
+
+  const content = contentCreator(ui.desktop, weather);
+
+  const mainPage = content.mainPage(ui.desktop);
+
+  page.render(document.body, page.nodeCreate(mainPage));
+};
+
+app();
