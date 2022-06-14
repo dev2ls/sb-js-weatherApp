@@ -1,34 +1,45 @@
 {
   "hourlyForecast": {
     "tag": "div",
+    "className": "hourly",
     "c": {
       "previous": {
         "tag": "button"
       },
-      "hourlyCard": {
+      "wrapper": {
         "tag": "div",
-        "className": "hour forecast",
+        "className": "cards",
         "c": {
-          "hour": {
-            "tag": "time"
-          },
-          "icon": {
-            "tag": "img"
-          },
-          "temperature": {
-            "tag": "span"
-          },
-          "pressure": {
-            "tag": "span"
-          },
-          "humidity": {
-            "tag": "span"
-          },
-          "windSpeed": {
-            "tag": "span"
-          },
-          "deg": {
-            "tag": "span"
+          "hourlyCard": {
+            "tag": "div",
+            "className": "card",
+            "c": {
+              "hour": {
+                "tag": "time"
+              },
+              "icon": {
+                "tag": "img"
+              },
+              "descr": {
+                "tag": "span"
+              },
+              "temperature": {
+                "tag": "span",
+                "s": "<sup>0</sup>C"
+              },
+              "pressure": {
+                "tag": "span"
+              },
+              "humidity": {
+                "tag": "span"
+              },
+              "windSpeed": {
+                "tag": "span"
+              },
+              "deg": {
+                "tag": "span"
+              }
+            }
           }
         }
       },
@@ -39,14 +50,125 @@
   },
   "dailyForecast": {
     "tag": "div",
+    "className": "daily",
     "c": {
       "previous": {
         "tag": "button"
       },
-      "dailyCard": {
+      "wrapper": {
         "tag": "div",
-        "className": "day forecast",
-        "c": {}
+        "className": "cards",
+        "c": {
+          "dailyCard": {
+            "tag": "div",
+            "className": "day forecast",
+            "c": {
+              "date": {
+                "tag": "time"
+              },
+              "icon": {
+                "tag": "img"
+              },
+              "descr": {
+                "tag": "span"
+              },
+              "sun": {
+                "tag": "div",
+                "c": {
+                  "sunrise": {
+                    "tag": "time"
+                  },
+                  "sunset": {
+                    "tag": "time"
+                  }
+                }
+              },
+              "temperatures": {
+                "tag": "div",
+                "c": {
+                  "headers": {
+                    "tag": "div",
+                    "c": {
+                      "morning": {
+                        "tag": "img",
+                        "src": "./assets/dayStance.jpg"
+                      },
+                      "day": {
+                        "tag": "img",
+                        "src": "./assets/dayStance.jpg"
+                      },
+                      "evening": {
+                        "tag": "img",
+                        "src": "./assets/dayStance.jpg"
+                      },
+                      "night": {
+                        "tag": "img",
+                        "src": "./assets/dayStance.jpg"
+                      }
+                    }
+                  },
+                  "temp": {
+                    "tag": "div",
+                    "c": {
+                      "header": {
+                        "tag": "span",
+                        "textContent": "Prediction:"
+                      },
+                      "morning": {
+                        "tag": "span"
+                      },
+                      "day": {
+                        "tag": "span"
+                      },
+                      "evening": {
+                        "tag": "span"
+                      },
+                      "night": {
+                        "tag": "span"
+                      }
+                    }
+                  },
+                  "feelsLike": {
+                    "tag": "div",
+                    "c": {
+                      "header": {
+                        "tag": "span",
+                        "textContent": "Feels like:"
+                      },
+                      "morning": {
+                        "tag": "span"
+                      },
+                      "day": {
+                        "tag": "span"
+                      },
+                      "evening": {
+                        "tag": "span"
+                      },
+                      "night": {
+                        "tag": "span"
+                      }
+                    }
+                  }
+                }
+              },
+              "humidity": {
+                "tag": "span"
+              },
+              "pressure": {
+                "tag": "span"
+              },
+              "windSpeed": {
+                "tag": "span"
+              },
+              "deg": {
+                "tag": "span"
+              },
+              "uvi": {
+                "tag": "span"
+              }
+            }
+          }
+        }
       },
       "next": {
         "tag": "button"
