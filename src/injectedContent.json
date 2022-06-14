@@ -4,11 +4,13 @@
     "className": "hourly",
     "c": {
       "previous": {
-        "tag": "button"
+        "tag": "button",
+        "id": "hourlyPrev"
       },
       "wrapper": {
         "tag": "div",
         "className": "cards",
+        "id": "hourlyCards",
         "c": {
           "hourlyCard": {
             "tag": "div",
@@ -44,7 +46,9 @@
         }
       },
       "next": {
-        "tag": "button"
+        "tag": "button",
+        "id": "hourlyNext",
+        "textContent": "next"
       }
     }
   },
@@ -53,15 +57,17 @@
     "className": "daily",
     "c": {
       "previous": {
-        "tag": "button"
+        "tag": "button",
+        "id": "dailyPrev"
       },
       "wrapper": {
         "tag": "div",
         "className": "cards",
+        "id": "dailyCards",
         "c": {
           "dailyCard": {
             "tag": "div",
-            "className": "day forecast",
+            "className": "card",
             "c": {
               "date": {
                 "tag": "time"
@@ -86,27 +92,6 @@
               "temperatures": {
                 "tag": "div",
                 "c": {
-                  "headers": {
-                    "tag": "div",
-                    "c": {
-                      "morning": {
-                        "tag": "img",
-                        "src": "./assets/dayStance.jpg"
-                      },
-                      "day": {
-                        "tag": "img",
-                        "src": "./assets/dayStance.jpg"
-                      },
-                      "evening": {
-                        "tag": "img",
-                        "src": "./assets/dayStance.jpg"
-                      },
-                      "night": {
-                        "tag": "img",
-                        "src": "./assets/dayStance.jpg"
-                      }
-                    }
-                  },
                   "temp": {
                     "tag": "div",
                     "c": {
@@ -171,7 +156,8 @@
         }
       },
       "next": {
-        "tag": "button"
+        "tag": "button",
+        "id": "dailyNext"
       }
     }
   }
