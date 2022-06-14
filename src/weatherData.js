@@ -36,6 +36,18 @@ const weatherData = async (city) => {
 
   data.forecast = forResp;
 
+  const setUrl = (array) => {
+    array.forEach((card) => {
+      const cond = card.weather[0];
+
+      cond.icon = `http://openweathermap.org/img/wn/${card.weather[0].icon}@2x.png`;
+    });
+  };
+
+  setUrl(data.forecast.hourly);
+
+  setUrl(data.forecast.daily);
+
   return data;
 };
 
