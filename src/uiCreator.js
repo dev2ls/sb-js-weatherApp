@@ -1,7 +1,7 @@
 import contentCreator from './contentCreator';
 import injectedContent from './injectedContent.json';
 
-const uiCreator = () => {
+const uiCreator = (data) => {
   const nodeCreate = (ui) => {
     const element = structuredClone(ui);
 
@@ -12,6 +12,8 @@ const uiCreator = () => {
     if (element.c) delete element.c;
 
     if (element.i) delete element.i;
+
+    if (element.s) delete element.s;
 
     const parent = document.createElement(tag);
 
@@ -38,7 +40,7 @@ const uiCreator = () => {
           delete c[key];
 
           Object.values(value).forEach((func) => {
-            const content = contentCreator(injectedContent);
+            const content = contentCreator(injectedContent, data);
 
             const nodes = content[func]();
 
