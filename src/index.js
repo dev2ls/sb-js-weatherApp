@@ -6,8 +6,18 @@ import './ui.scss';
 import contentCreator from './contentCreator';
 import eventCreator from './eventCreator';
 
-const app = async () => {
-  const data = await weatherData('Szczecin');
+const uicreator = uiCreator();
+
+const startPage = eventCreator(uicreator.nodeCreate(ui.start));
+
+const app = async (city) => {
+  const loader = uicreator.nodeCreate(ui.loader);
+
+  uicreator.render(document.body, loader);
+
+  const data = await weatherData(city);
+
+  document.querySelector('.loader').remove();
 
   const page = uiCreator(data);
 
@@ -17,7 +27,7 @@ const app = async () => {
 
   const pageWithEvents = eventCreator(page.nodeCreate(mainPage));
 
-  pageWithEvents.slider(6, {
+  pageWithEvents.slider(8, {
     shell: 'hourlyCards',
     card: 'card',
     prev: 'hourlyPrev',
@@ -31,7 +41,24 @@ const app = async () => {
     next: 'dailyNext',
   });
 
+  pageWithEvents.cityGrab(
+    {
+      inp: 'cityInput',
+      btn: 'submitBtn',
+    },
+    app,
+  );
+
   page.render(document.body, pageWithEvents.node);
 };
 
-app();
+uicreator.render(
+  document.body,
+  startPage.cityGrab(
+    {
+      inp: 'cityInput',
+      btn: 'submitBtn',
+    },
+    app,
+  ),
+);
