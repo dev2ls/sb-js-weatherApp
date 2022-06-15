@@ -1,5 +1,5 @@
-const eventCreator = (data) => {
-  const node = data;
+const eventCreator = (nodes) => {
+  const node = nodes;
 
   const slider = (offset, sets) => {
     const shell = node.querySelector(`#${sets.shell}`);
@@ -65,25 +65,41 @@ const eventCreator = (data) => {
     return node;
   };
 
-  const cityCapture = () => {
-    const setWeather = async () => {};
+  const cityGrab = (sets, app) => {
+    const input = node.querySelector(`#${sets.inp}`);
 
-    const city = node.querySelector('#cityInput');
-
-    const action = (event) => {
+    const actOnEnter = (event) => {
       if (event.keyCode === 13) {
-        setWeather(event.target.value);
+        node.remove();
+
+        return app(event.target.value);
       }
     };
 
-    city.addEventListener('keydown', action);
+    input.addEventListener('keydown', actOnEnter);
 
-    setWeather(city.value);
+    const actOnBtn = () => {
+      node.remove();
+
+      const result = app(input.value);
+
+      return result;
+    };
+
+    if (sets.btn) {
+      const btn = node.querySelector(`#${sets.btn}`);
+
+      btn.addEventListener('click', actOnBtn);
+    }
 
     return node;
   };
 
-  return { slider, node };
+  return {
+    slider,
+    cityGrab,
+    node,
+  };
 };
 
 export default eventCreator;
