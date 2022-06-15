@@ -1,17 +1,29 @@
 {
-  "loader": {
+  "start": {
     "tag": "label",
     "className": "cityLabel",
     "c": {
+      "title": {
+        "tag": "span",
+        "textContent": "Please, enter a city name"
+      },
       "cityInput": {
         "tag": "input",
         "type": "text",
         "className": "cityInput",
-        "id": "cityInput",
-
-        "value": "Szczecin"
+        "id": "cityInput"
+      },
+      "submitBtn": {
+        "tag": "button",
+        "id": "submitBtn",
+        "textContent": "Ok"
       }
     }
+  },
+
+  "loader": {
+    "tag": "div",
+    "className": "loader"
   },
 
   "desktop": {
@@ -26,11 +38,17 @@
             "tag": "input",
             "type": "text",
             "className": "cityInput",
-            "id": "cityInput",
-
-            "value": "Szczecin"
+            "id": "cityInput"
+          },
+          "submitBtn": {
+            "tag": "button",
+            "id": "submitBtn",
+            "textContent": "Ok"
           }
         }
+      },
+      "cityName": {
+        "tag": "span"
       },
       "current": {
         "tag": "div",
@@ -65,18 +83,15 @@
                   },
                   "feelsLike": {
                     "tag": "span",
-                    "id": "feelsLike",
-                    "textContent": "feels like: "
+                    "id": "feelsLike"
                   },
                   "minimal": {
                     "tag": "span",
-                    "id": "minimal",
-                    "textContent": "minimum: "
+                    "id": "minimal"
                   },
                   "maximal": {
                     "tag": "span",
-                    "id": "maximal",
-                    "textContent": "maximum: "
+                    "id": "maximal"
                   }
                 }
               },
@@ -109,8 +124,7 @@
             "c": {
               "humidity": {
                 "tag": "span",
-                "id": "humidity",
-                "textContent": "Humidity: "
+                "id": "humidity"
               },
               "pressure": {
                 "tag": "span",
@@ -119,13 +133,11 @@
               },
               "windSpeed": {
                 "tag": "span",
-                "id": "windSpeed",
-                "textContent": "Wind speed: "
+                "id": "windSpeed"
               },
               "deg": {
                 "tag": "span",
-                "id": "deg",
-                "textContent": "Wind direction: "
+                "id": "deg"
               }
             }
           },
