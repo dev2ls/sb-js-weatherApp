@@ -28,6 +28,10 @@ const weatherData = async (city) => {
 
   data.sys = curResp.sys;
 
+  data.name = curResp.name;
+
+  data.country = curResp.sys.country;
+
   const [weather] = curResp.weather;
 
   data.weather = weather;
