@@ -1,6 +1,7 @@
 const contentCreator = (ui, data) => {
   const getRef = (name, obj) => {
     let result;
+
     const nameSearch = (prop) => {
       if (name in prop) result = prop[name];
 
@@ -37,6 +38,8 @@ const contentCreator = (ui, data) => {
     if (type.includes('d')) string += `${add0(date, 'getDate')}`;
 
     if (type.includes('w')) string += ` ${days[date.getDay()]}`;
+
+    if (type.includes('wh')) string += ' ';
 
     if (type.includes('h')) string += `${add0(date, 'getHours')}`;
 
@@ -95,6 +98,10 @@ const contentCreator = (ui, data) => {
 
     setDateTime();
 
+    const city = getRef('cityName', blank);
+
+    city.textContent = `${data.name} ${data.country}`;
+
     const skyImg = getRef('skyImg', blank);
 
     skyImg.src = data.weather.icon;
@@ -111,40 +118,21 @@ const contentCreator = (ui, data) => {
 
     const t = getRef('temperatures', blank).c;
 
-    const tTexts = t;
+    t.feelsLike.textContent = `feels like: ${k2c(data.main.feels_like)}`;
 
-    t.feelsLike.textContent = tTexts.feelsLike.textContent.concat(
-      k2c(data.main.feels_like),
-    );
+    t.minimal.textContent = `min: ${k2c(data.main.temp_min)}`;
 
-    t.minimal.textContent = tTexts.minimal.textContent.concat(
-      k2c(data.main.temp_min),
-    );
-
-    t.maximal.textContent = tTexts.maximal.textContent.concat(
-      k2c(data.main.temp_max),
-    );
+    t.maximal.textContent = `max: ${k2c(data.main.temp_max)}`;
 
     const o = getRef('otherData', blank).c;
 
-    const oTexts = o;
+    o.humidity.textContent = `humidity ${data.main.humidity} %`;
 
-    o.humidity.textContent = oTexts.humidity.textContent.concat(
-      data.main.humidity,
-      ' %',
-    );
+    o.pressure.textContent = `pressure ${data.main.pressure} hPa`;
 
-    o.pressure.textContent = oTexts.pressure.textContent.concat(
-      data.main.pressure,
-      ' hPa',
-    );
+    o.windSpeed.textContent = `wind speed: ${data.wind.speed} m/s`;
 
-    o.windSpeed.textContent = oTexts.windSpeed.textContent.concat(
-      data.wind.speed,
-      ' m/s',
-    );
-
-    o.deg.textContent = oTexts.deg.textContent.concat(data.wind.deg, ' deg.');
+    o.deg.textContent = `wind direction ${data.wind.deg} deg.`;
 
     const sun = getRef('sun', blank).c;
 
@@ -167,13 +155,15 @@ const contentCreator = (ui, data) => {
     delete hourly.ui.c.wrapper.c.hourlyCard;
 
     f.hourly.map((ticket, i) => {
+      if (card === undefined) return;
+
       const cardRef = structuredClone(card);
 
       const key = `h${i + 1}`;
 
       const hour = getRef('hour', cardRef);
 
-      hour.textContent = convertTime(ticket.dt, 'h');
+      hour.textContent = convertTime(ticket.dt, 'whm');
 
       const icon = getRef('icon', cardRef);
 
@@ -226,6 +216,7 @@ const contentCreator = (ui, data) => {
 
     f.daily.map((ticket, i) => {
       const cardRef = structuredClone(card);
+      if (card === undefined) return;
 
       const key = `d${i + 1}`;
 
@@ -255,23 +246,23 @@ const contentCreator = (ui, data) => {
 
       const temp = temperatures.c.temp.c;
 
-      temp.morning = k2c(ticket.temp.morn);
+      temp.morning.textContent = k2c(ticket.temp.morn);
 
-      temp.day = k2c(ticket.temp.day);
+      temp.day.textContent = k2c(ticket.temp.day);
 
-      temp.evening = k2c(ticket.temp.eve);
+      temp.evening.textContent = k2c(ticket.temp.eve);
 
-      temp.night = k2c(ticket.temp.night);
+      temp.night.textContent = k2c(ticket.temp.night);
 
       const feels = temperatures.c.feelsLike.c;
 
-      feels.morning = k2c(ticket.feels_like.morn);
+      feels.morning.textContent = k2c(ticket.feels_like.morn);
 
-      feels.day = k2c(ticket.feels_like.day);
+      feels.day.textContent = k2c(ticket.feels_like.day);
 
-      feels.evening = k2c(ticket.feels_like.eve);
+      feels.evening.textContent = k2c(ticket.feels_like.eve);
 
-      feels.night = k2c(ticket.feels_like.night);
+      feels.night.textContent = k2c(ticket.feels_like.night);
 
       const humidity = getRef('humidity', cardRef);
 
