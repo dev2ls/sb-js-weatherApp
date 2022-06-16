@@ -30,41 +30,57 @@
     "tag": "div",
     "className": "container",
     "c": {
-      "cityLabel": {
-        "tag": "label",
-        "className": "cityLabel",
-        "c": {
-          "cityInput": {
-            "tag": "input",
-            "type": "text",
-            "className": "cityInput",
-            "id": "cityInput"
-          },
-          "submitBtn": {
-            "tag": "button",
-            "id": "submitBtn",
-            "textContent": "Ok"
-          }
-        }
-      },
-      "cityName": {
-        "tag": "span"
-      },
       "current": {
         "tag": "div",
         "className": "currentTemp",
         "c": {
+          "cityLabel": {
+            "tag": "label",
+            "className": "cityLabel",
+            "c": {
+              "cityInput": {
+                "tag": "input",
+                "type": "text",
+                "className": "cityInput",
+                "id": "cityInput"
+              },
+              "submitBtn": {
+                "tag": "button",
+                "id": "submitBtn",
+                "textContent": "Ok"
+              }
+            }
+          },
+          "cityName": {
+            "tag": "span"
+          },
+          "currentDate": {
+            "tag": "div",
+            "className": "time",
+            "c": {
+              "date": {
+                "tag": "time",
+                "className": "date",
+                "id": "date"
+              },
+              "time": {
+                "tag": "time",
+                "className": "time",
+                "id": "time"
+              }
+            }
+          },
           "skyWrapper": {
             "tag": "div",
             "className": "sky",
             "c": {
-              "sky": {
-                "tag": "span",
-                "id": "sky"
-              },
               "skyImg": {
                 "tag": "img",
                 "id": "skyImg"
+              },
+              "sky": {
+                "tag": "span",
+                "id": "sky"
               }
             }
           },
@@ -102,34 +118,18 @@
               }
             }
           },
-          "currentDate": {
-            "tag": "div",
-            "className": "time",
-            "c": {
-              "date": {
-                "tag": "time",
-                "className": "date",
-                "id": "date"
-              },
-              "time": {
-                "tag": "time",
-                "className": "time",
-                "id": "time"
-              }
-            }
-          },
           "otherData": {
             "tag": "div",
             "className": "otherData",
             "c": {
-              "humidity": {
-                "tag": "span",
-                "id": "humidity"
-              },
               "pressure": {
                 "tag": "span",
                 "id": "pressure",
                 "textContent": "Pressure: "
+              },
+              "humidity": {
+                "tag": "span",
+                "id": "humidity"
               },
               "windSpeed": {
                 "tag": "span",
@@ -179,6 +179,7 @@
       },
       "forecasts": {
         "tag": "div",
+        "className": "forecasts",
         "c": {
           "i": {
             "hourly": "hourlyCard",
