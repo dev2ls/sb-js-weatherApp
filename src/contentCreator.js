@@ -126,19 +126,19 @@ const contentCreator = (ui, data) => {
 
     const o = getRef('otherData', blank).c;
 
-    o.humidity.textContent = `humidity ${data.main.humidity} %`;
+    o.humidity.textContent = `${data.main.humidity} %`;
 
-    o.pressure.textContent = `pressure ${data.main.pressure} hPa`;
+    o.pressure.textContent = `${data.main.pressure} hPa`;
 
-    o.windSpeed.textContent = `wind speed: ${data.wind.speed} m/s`;
+    o.windSpeed.textContent = `${data.wind.speed} m/s`;
 
-    o.deg.textContent = `wind direction ${data.wind.deg} deg.`;
+    o.deg.textContent = `${data.wind.deg} deg.`;
 
     const sun = getRef('sun', blank).c;
 
-    sun.sunrise.c.time.textContent = convertTime(data.sys.sunrise, 'hms');
+    sun.sunrise.c.time.textContent = convertTime(data.sys.sunrise, 'hm');
 
-    sun.sunset.c.time.textContent = convertTime(data.sys.sunset, 'hms');
+    sun.sunset.c.time.textContent = convertTime(data.sys.sunset, 'hm');
 
     return blank;
   };
@@ -246,23 +246,15 @@ const contentCreator = (ui, data) => {
 
       const temp = temperatures.c.temp.c;
 
-      temp.morning.textContent = k2c(ticket.temp.morn);
+      const degIcon = '<sup>0</sup>';
 
-      temp.day.textContent = k2c(ticket.temp.day);
+      temp.morning.innerHTML = `${k2c(ticket.temp.morn)} ${degIcon}`;
 
-      temp.evening.textContent = k2c(ticket.temp.eve);
+      temp.day.innerHTML = `${k2c(ticket.temp.day)} ${degIcon}`;
 
-      temp.night.textContent = k2c(ticket.temp.night);
+      temp.evening.innerHTML = `${k2c(ticket.temp.eve)} ${degIcon}`;
 
-      const feels = temperatures.c.feelsLike.c;
-
-      feels.morning.textContent = k2c(ticket.feels_like.morn);
-
-      feels.day.textContent = k2c(ticket.feels_like.day);
-
-      feels.evening.textContent = k2c(ticket.feels_like.eve);
-
-      feels.night.textContent = k2c(ticket.feels_like.night);
+      temp.night.innerHTML = `${k2c(ticket.temp.night)} ${degIcon}`;
 
       const humidity = getRef('humidity', cardRef);
 
