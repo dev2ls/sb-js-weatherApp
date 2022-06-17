@@ -94,25 +94,19 @@
               },
               "temperatures": {
                 "tag": "div",
-                "className": "table",
+                "className": "predict",
                 "c": {
-                  "temp": {
-                    "tag": "div",
-                    "className": "predict",
-                    "c": {
-                      "morning": {
-                        "tag": "span"
-                      },
-                      "day": {
-                        "tag": "span"
-                      },
-                      "evening": {
-                        "tag": "span"
-                      },
-                      "night": {
-                        "tag": "span"
-                      }
-                    }
+                  "morning": {
+                    "tag": "span"
+                  },
+                  "day": {
+                    "tag": "span"
+                  },
+                  "evening": {
+                    "tag": "span"
+                  },
+                  "night": {
+                    "tag": "span"
                   }
                 }
               },

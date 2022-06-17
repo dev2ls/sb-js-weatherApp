@@ -242,9 +242,7 @@ const contentCreator = (ui, data) => {
 
       sunset.textContent = convertTime(ticket.sunset, 'hm');
 
-      const temperatures = getRef('temperatures', cardRef);
-
-      const temp = temperatures.c.temp.c;
+      const temp = getRef('temperatures', cardRef).c;
 
       const degIcon = '<sup>0</sup>';
 
