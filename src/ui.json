@@ -23,7 +23,13 @@
 
   "loader": {
     "tag": "div",
-    "className": "loader"
+    "className": "loader",
+    "c": {
+      "loadPhrase": {
+        "tag": "span",
+        "textContent": "Loading..."
+      }
+    }
   },
 
   "desktop": {

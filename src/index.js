@@ -62,4 +62,8 @@ uicreator.render(
     app,
   ),
 );
-// app('Szczecin');
+// app('Tartu');
+
+// const loader = uicreator.nodeCreate(ui.loader);
+// uicreator.render(document.body, loader);
+// uicreator.render(document.body, loader);
