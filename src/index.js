@@ -27,7 +27,7 @@ const app = async (city) => {
 
   const pageWithEvents = eventCreator(page.nodeCreate(mainPage));
 
-  pageWithEvents.slider(8, {
+  pageWithEvents.slider(6, {
     shell: 'hourlyCards',
     card: 'card',
     prev: 'hourlyPrev',
@@ -62,3 +62,4 @@ uicreator.render(
     app,
   ),
 );
+// app('Szczecin');
