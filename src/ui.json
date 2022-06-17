@@ -1,7 +1,7 @@
 {
   "start": {
     "tag": "label",
-    "className": "cityLabel",
+    "className": "city",
     "c": {
       "title": {
         "tag": "span",
