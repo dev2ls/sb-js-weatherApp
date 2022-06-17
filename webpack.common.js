@@ -3,22 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const json5 = require('json5');
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.js',
-  devtool: 'source-map',
-  devServer: {
-    static: './dist',
-  },
+
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Weather app',
     }),
   ],
+
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+
   module: {
     rules: [
       {
@@ -35,14 +33,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.json5$/i,
