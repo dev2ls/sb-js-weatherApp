@@ -80,13 +80,10 @@ html {
 }
 
 .container {
-  background-image: linear-gradient(243.18deg, #5cebd1 0%, #1a2b2c 100%);
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
+  overflow: hidden;
 
   .otherData {
     display: flex;
@@ -241,7 +238,6 @@ html {
   }
   .nextBtn {
     transform: rotate(225deg);
-    margin-right: 5px;
   }
 
   .prevBtn {
@@ -255,6 +251,7 @@ html {
     display: flex;
     flex-flow: column nowrap;
 
+    padding: 15px 0;
     margin: 10px;
 
     background-color: rgba(17, 255, 0, 0.05);
