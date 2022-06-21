@@ -144,7 +144,7 @@ const contentCreator = (ui, data) => {
   };
 
   const hourlyCard = () => {
-    const hourly = { ui: ui.hourlyForecast };
+    const hourly = { ui: structuredClone(ui.hourlyForecast) };
 
     const f = data.forecast;
 
@@ -155,8 +155,6 @@ const contentCreator = (ui, data) => {
     delete hourly.ui.c.wrapper.c.hourlyCard;
 
     f.hourly.map((ticket, i) => {
-      if (card === undefined) return;
-
       const cardRef = structuredClone(card);
 
       const key = `h${i + 1}`;
@@ -204,7 +202,7 @@ const contentCreator = (ui, data) => {
   };
 
   const dailyCard = () => {
-    const daily = { ui: ui.dailyForecast };
+    const daily = { ui: structuredClone(ui.dailyForecast) };
 
     const f = data.forecast;
 
@@ -216,7 +214,6 @@ const contentCreator = (ui, data) => {
 
     f.daily.map((ticket, i) => {
       const cardRef = structuredClone(card);
-      if (card === undefined) return;
 
       const key = `d${i + 1}`;
 
