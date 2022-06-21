@@ -20,11 +20,6 @@ const uiCreator = (data) => {
     Object.entries(element).forEach((prop) => {
       const [key, value] = prop;
 
-      // if (key === 'src') {
-      //   const link = `${value}`;
-
-      //   parent[key] = require(`./${link}`);
-      // } else
       parent[key] = value;
     });
 
